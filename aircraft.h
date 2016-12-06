@@ -8,6 +8,7 @@
 #ifndef AIRCRAFT_H_
 #define AIRCRAFT_H_
 #include <string>
+#include "util.h"
 
 class Aircraft {
   public:
@@ -16,6 +17,7 @@ class Aircraft {
     int refill(int& ammo_storage);
     int fight();
     virtual std::string get_type() = 0;
+    std::string get_status();
   private:
     int ammo;
     int max_ammo;

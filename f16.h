@@ -3,7 +3,7 @@
 #include <string>
 #include "aircraft.h"
 
-class f16 : public Aircraft {
+class F16 : public Aircraft {
   private:
     std::string type = "F16";
   public:
