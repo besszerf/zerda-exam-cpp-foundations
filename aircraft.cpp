@@ -18,10 +18,11 @@ int Aircraft::fight() {
 int Aircraft::refill(int& ammo_storage) {
   if (ammo_storage > max_ammo) {
     ammo = max_ammo;
+    ammo_storage -= max_ammo;
   } else {
     ammo = ammo_storage;
+    ammo_storage = 0;
   }
-  ammo_storage -= max_ammo;
   return ammo_storage;
 }
 
@@ -32,4 +33,8 @@ std::string Aircraft::get_status() {
   status += "Base damage: " + to_string(base_damage) + ", ";
   status += "All Damage: " + to_string(base_damage * ammo);
   return status;
+}
+
+int Aircraft::ammo_needs() {
+  return max_ammo - ammo;
 }
