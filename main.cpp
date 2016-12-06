@@ -26,12 +26,14 @@ int main() {
   carrier.add_aircraft("F35");
   carrier.add_aircraft("F16");
   carrier.add_aircraft("F35");
-/*  carrier.add_aircraft("F35");
+  carrier.add_aircraft("F35");
   carrier.add_aircraft("F16");
   carrier.add_aircraft("F16");
-*/try {
+try {
   carrier.fill();
-} catch (int x) {}
+} catch (int x) {
+  cout << x << endl;
+}
 
   Carrier c2(50);
   c2.add_aircraft("F35");
