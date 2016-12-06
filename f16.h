@@ -10,6 +10,4 @@ class F16 : public Aircraft {
     std::string get_type();
 };
 
-
-
 #endif /* F16_H_ */

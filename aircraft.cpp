@@ -16,7 +16,11 @@ int Aircraft::fight() {
 }
 
 int Aircraft::refill(int& ammo_storage) {
-  ammo = max_ammo;
+  if (ammo_storage > max_ammo) {
+    ammo = max_ammo;
+  } else {
+    ammo = ammo_storage;
+  }
   ammo_storage -= max_ammo;
   return ammo_storage;
 }

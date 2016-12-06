@@ -1,10 +1,3 @@
-/*
- * util.h
- *
- *  Created on: 2016.12.06.
- *      Author: caruzzo74
- */
-
 #ifndef UTIL_H_
 #define UTIL_H_
 #include <string>
