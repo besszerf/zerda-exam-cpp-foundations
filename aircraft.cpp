@@ -6,6 +6,9 @@ Aircraft::Aircraft() {
   base_damage = 30;
 }
 
+Aircraft::~Aircraft() {}
+
+
 int Aircraft::fight() {
   int damage = base_damage*ammo;
   ammo = 0;
