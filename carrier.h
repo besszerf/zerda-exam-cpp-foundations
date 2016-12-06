@@ -11,6 +11,7 @@ class Carrier {
     int health;
   public:
     Carrier(int ammo);
+    void add_aircraft(std::string aircraft_type);
 };
 
 #endif /* CARRIER_H_ */
