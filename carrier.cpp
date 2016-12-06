@@ -14,7 +14,7 @@ void Carrier::add_aircraft(std::string aircraft_type) {
   }
 }
 
-void Carrier::fill() {
+void Carrier::fill() throw (int){
   int needed_ammo;
   for (unsigned int i = 0; i < aircrafts.size(); i++) {
     needed_ammo += aircrafts[i]->ammo_needs();
@@ -26,16 +26,17 @@ void Carrier::fill() {
   } else {
     for (unsigned i = 0; i < aircrafts.size(); i++) {
       if (aircrafts[i]->get_type() == "F16") {
-        needed_ammo += aircrafts[i]->ammo_needs();
-        if (ammo_store > 0) {
-          ammo_store = aircrafts[i]->refill(ammo_store);
+        if (ammo_store < 1) {
+          throw 0;
         }
+        ammo_store = aircrafts[i]->refill(ammo_store);
       }
     }
     for (unsigned i = 0; i < aircrafts.size(); i++) {
-      if (ammo_store > 0) {
-        ammo_store = aircrafts[i]->refill(ammo_store);
+      if (ammo_store < 1) {
+        throw 0;
       }
+      ammo_store = aircrafts[i]->refill(ammo_store);
     }
   }
 }

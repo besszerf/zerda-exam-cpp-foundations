@@ -13,7 +13,7 @@ class Carrier {
   public:
     Carrier(int ammo);
     void add_aircraft(std::string aircraft_type);
-    void fill();
+    void fill() throw (int);
     int get_ammo_store();
     void fight(Carrier other_carrier);
     int get_health();

@@ -25,15 +25,21 @@ int main() {
   Carrier carrier(50);
   carrier.add_aircraft("F35");
   carrier.add_aircraft("F16");
+  carrier.add_aircraft("F35");
+/*  carrier.add_aircraft("F35");
   carrier.add_aircraft("F16");
+  carrier.add_aircraft("F16");
+*/try {
   carrier.fill();
+} catch (int x) {}
 
   Carrier c2(50);
   c2.add_aircraft("F35");
   c2.add_aircraft("F16");
-  c2.fill();
+  try {
+    c2.fill();
+  } catch (int x) {}
   carrier.fight(c2);
-  cout << c2.get_health() << endl;
   c2.get_status();
   return 0;
 }
