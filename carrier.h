@@ -17,6 +17,8 @@ class Carrier {
     int get_ammo_store();
     void fight(Carrier other_carrier);
     int get_health();
+    void get_status();
+    int total_damage();
 };
 
 #endif /* CARRIER_H_ */

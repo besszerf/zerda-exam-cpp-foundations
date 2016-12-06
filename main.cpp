@@ -27,7 +27,6 @@ int main() {
   carrier.add_aircraft("F16");
   carrier.add_aircraft("F16");
   carrier.fill();
-  cout << carrier.get_ammo_store() << endl;
 
   Carrier c2(50);
   c2.add_aircraft("F35");
@@ -35,5 +34,6 @@ int main() {
   c2.fill();
   carrier.fight(c2);
   cout << c2.get_health() << endl;
+  c2.get_status();
   return 0;
 }

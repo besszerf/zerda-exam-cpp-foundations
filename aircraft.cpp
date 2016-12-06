@@ -26,12 +26,16 @@ int Aircraft::refill(int& ammo_storage) {
   return ammo_storage;
 }
 
+int Aircraft::get_total_damage() {
+  return base_damage * ammo;
+}
+
 std::string Aircraft::get_status() {
   std::string status = "";
   status += "Type: " + get_type() + ", ";
   status += "Ammo: " + to_string(ammo) + ", ";
   status += "Base damage: " + to_string(base_damage) + ", ";
-  status += "All Damage: " + to_string(base_damage * ammo);
+  status += "All Damage: " + to_string(get_total_damage());
   return status;
 }
 

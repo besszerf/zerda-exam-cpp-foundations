@@ -51,11 +51,31 @@ void Carrier::fight(Carrier other_carrier) {
   }
   if (total_damage > *other_carrier.health) {
     *other_carrier.health = 0;
-    std::cout << "It's dead Jim :(" << std::endl;
   } else {
     *other_carrier.health -= total_damage;
   }
 }
 int Carrier::get_health() {
   return *health;
+}
+
+int Carrier::total_damage() {
+  int total_damage = 0;
+  for (unsigned int i = 0; i < aircrafts.size(); i++) {
+    total_damage += aircrafts[i]->get_total_damage();
+  }
+  return total_damage;
+}
+void Carrier::get_status() {
+  if (*health != 0) {
+    std::cout << "Aircraft count: " + to_string(aircrafts.size()) + ", ";
+    std::cout <<  "Ammo storage: " + to_string(ammo_store) + ", ";
+    std::cout <<  "Total Damage: " + to_string(total_damage()) + "\n";
+    std::cout <<  "Aircrafts: \n";
+    for (uint i = 0; i < aircrafts.size(); i++) {
+      std::cout <<  aircrafts[i]->get_status() << std::endl;
+    }
+  } else {
+    std::cout << "It's dead Jim :(" << std::endl;
+  }
 }

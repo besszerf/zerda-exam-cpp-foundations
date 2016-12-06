@@ -11,6 +11,7 @@ class Aircraft {
     int fight();
     virtual std::string get_type() = 0;
     std::string get_status();
+    int get_total_damage();
     int ammo_needs();
   protected:
     int max_ammo;
